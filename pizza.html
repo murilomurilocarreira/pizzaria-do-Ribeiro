@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria do Ribeiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pizzaria do Ribeiro</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cardapio">
+            <h2>Cardápio</h2>
+            <div id="lista-pizzas">
+                <!-- Aqui serão listadas as pizzas -->
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para fazer seu pedido ou tirar dúvidas.</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p>Email: contato@pizzariadoribeiro.com</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pizzaria do Ribeiro. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Estilos específicos */
+#cardapio {
+    border-bottom: 1px solid #ccc;
+}
+
+#lista-pizzas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+// Dados das pizzas
+const pizzas = [
+    { nome: 'Margherita', ingredientes: 'Molho de tomate, queijo mussarela, manjericão', preco: 'R$ 25,00' },
+    { nome: 'Calabresa', ingredientes: 'Molho de tomate, queijo mussarela, calabresa, cebola', preco: 'R$ 28,00' },
+    { nome: 'Quatro Queijos', ingredientes: 'Molho de tomate, queijo mussarela, queijo prato, queijo provolone, queijo parmesão', preco: 'R$ 30,00' },
+    // Adicione mais pizzas conforme necessário
+];
+
+// Função para exibir as pizzas no cardápio
+function exibirPizzas() {
+    const listaPizzas = document.getElementById('lista-pizzas');
+
+    pizzas.forEach(pizza => {
+        const cardPizza = document.createElement('div');
+        cardPizza.classList.add('pizza');
+
+        const nomePizza = document.createElement('h3');
+        nomePizza.textContent = pizza.nome;
+
+        const ingredientesPizza = document.createElement('p');
+        ingredientesPizza.textContent = `Ingredientes: ${pizza.ingredientes}`;
+
+        const precoPizza = document.createElement('p');
+        precoPizza.textContent = `Preço: ${pizza.preco}`;
+
+        cardPizza.appendChild(nomePizza);
+        cardPizza.appendChild(ingredientesPizza);
+        cardPizza.appendChild(precoPizza);
+
+        listaPizzas.appendChild(cardPizza);
+    });
+}
+
+// Chama a função para exibir as pizzas quando a página carregar
+window.onload = exibirPizzas;
 
