@@ -14,3 +14,6 @@ body{
     padding: 0;
 }
 
+.conteudo-pricipal{
+    background-image: url(./pizza.jpeg)
+}
