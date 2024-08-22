@@ -1,19 +1,61 @@
-:root{
-    --cor-branca:#FFFFFF;
-    --cinza-secundario:#C0C0C0;
-    --botao-azul:#167BF7;
-    --cor-de-fundo:#00030c;
+.cabecalho{
+    background-color: #383D58;
+    color: white;
+    display:flex;
+justify-content: space-around;
 }
+
+
+.cabecalho-imagem{
+    width: 20%;
+}
+
+.cabecalho-lista-item{
+    display: inline-block;
+    margin: 0 16px;
+    padding:24px 0;
+    font-size: 26px;
+}
+
+.escola{
+    display: flex;
+    color: white;
+    background-image: radial-gradient(circle at 45.62% 33.66%, #ff13a3 0, #ff04ab 10%, #ff00af 20%, #f503b0 30%, #d509ad 40%, #b20ea5 50%, #8f119b 60%, #6f1591 70%, #501788 80%, #301980 90%, #001a79 100%);
+    text-align: center;
+    align-items: center;
+    padding: 0 24px; 
+
+}
+
+.escola-conteudo{
+    width: 35%;
+}
+.escola-titulo{
+    padding: 24px 0;
+} 
+
 body{
-    background-color: var(--cor-de-fundo);
-    color :var(--cor-branca);
+   font-family: 'Poppins',sans-serif; 
+}
+.estudante-imagem{
+    width: 70%;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+.estudante-div{
+    text-align: center;
+    padding: 50px 0;
 }
 
-.conteudo-pricipal{
-    background-image: url(./pizza.jpeg)
+.estudantes-todos{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+
+}
+
+.cabecalho-link{
+    color:white;
+}
+
+.rodape-imagem{
+    width: 30px;
 }
